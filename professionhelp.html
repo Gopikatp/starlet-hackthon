@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am feeling</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
+    <script>
+        async function handleButtonClick(event) {
+            event.preventDefault();
+            const buttonContent = event.target.textContent;
+            const responseElement = document.getElementById('response');
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/get-response', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ button_content: buttonContent })
+                });
+
+                const data = await response.json();
+                responseElement.textContent = data.response;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => button.addEventListener('click', handleButtonClick));
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>I AM FEELING</h1>
+        <div class="grid">
+            
+            <a href="#" class="button red">Angry</a>
+            
+        </div>
+        <div id="response" class="response"></div>
+        <a href="#" class="appointment-button">Book Your Appointment Now</a>
+    </div>
+</body>
+</html>
+

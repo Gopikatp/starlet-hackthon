@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:url('Yoga4.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f6f6fa;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.banner {
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.content-section {
+
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+h2 {
+    font-size: 2em;
+    margin-right: 60%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 60%;
+}
+
+a {
+    color: #f6f6fa;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+  
+    border-radius: 10px;
+    margin: 20px;
+}
